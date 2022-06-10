@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Clases de objetos</h1>
+    <h3 id="books"> </h3>
+
+    <script>
+        class Libro {
+            constructor (lib, aut, edit, gen){
+                this.libro = lib;
+                this.autor = aut;
+                this.editorial = edit;
+                this.genero = gen;
+            }
+            mostrarLibro(){
+                return `${this.libro} - ${this.autor} - ${this.editorial} - ${this.genero}`
+            }
+        }
+
+        const l1 = new Libro ('El señor de los Anillos', 'J.J.R Tolkien', 'Minotauro', 'Fantasia medieval');
+        const l2 = new Libro ('La biblia de los caidos', 'Fernando Trujillo', 'Panamericana', 'Ficcion paranormal');
+        const l3 = new Libro ('El temor de un hombre sabio', 'Patrick Rothfuss', 'Plaza & Janes', 'Novela');
+
+        const libros = [l1, l2, l3];
+
+        function filtrarPorAutor(libros, nombre_autor) {
+            const libros_autor = []
+
+            for (let libro of libros) {
+                if (libro.autor == nombre_autor) {
+                    libros_autor.push(libro)
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>
